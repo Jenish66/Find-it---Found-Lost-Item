@@ -1,0 +1,209 @@
+
+/* ===== General page ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: url("bg.png") center / cover fixed no-repeat;
+    font-family: Arial, sans-serif;
+    color: #26374A;
+}
+
+/* ===== Header ===== */
+.Header {
+    background: rgba(239, 246, 255, 0.96);
+    padding: 12px 24px 18px;
+    margin: 12px;
+    border: 1px solid #C5D8EF;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(23, 59, 101, 0.12);
+}
+
+.Header h1 {
+    font-family: Georgia, serif;
+    font-size: 44px;
+    text-align: center;
+    color: #173B65;
+    margin: 0 0 18px;
+}
+
+.Header > ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Header > ul > li {
+    position: relative;
+}
+
+.Header a {
+    display: block;
+    padding: 10px 16px;
+    color: #173B65;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 8px;
+    transition: 0.25s ease;
+}
+
+.Header > ul > li > a:hover,
+.Header a.active {
+    background: #DCEEFF;
+    color: #2455A4;
+}
+
+/* Account dropdown */
+.Header .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    width: max-content;
+    padding: 6px;
+    margin: 0;
+    list-style: none;
+    background: #FFFFFF;
+    border: 1px solid #C5D8EF;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(23, 59, 101, 0.18);
+    z-index: 1000;
+}
+
+.Header .dropdown:hover > .dropdown-content,
+.Header .dropdown:focus-within > .dropdown-content {
+    display: block;
+}
+
+.Header .dropdown-content li {
+    display: block;
+}
+
+.Header .dropdown-content a {
+    padding: 10px 12px;
+    font-size: 17px;
+    white-space: nowrap;
+}
+
+.Header .dropdown-content a:hover {
+    background: #DCEEFF;
+}
+
+/* ===== Login card ===== */
+.Content {
+    width: min(90%, 480px);
+    margin: 45px auto;
+    padding: 35px 38px;
+    background: rgba(255, 255, 255, 0.97);
+    border: 1px solid #C5D8EF;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(23, 59, 101, 0.18);
+}
+
+.Content h1 {
+    margin: 0 0 12px;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 40px;
+    color: #173B65;
+}
+
+.intro {
+    text-align: center;
+    color: #526A86;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 28px;
+}
+
+/* ===== Form ===== */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: #173B65;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 13px 14px;
+    font-size: 16px;
+    color: #26374A;
+    background: #F5F9FF;
+    border: 1px solid #C5D8EF;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.form-group input:focus {
+    border-color: #3478C8;
+    box-shadow: 0 0 0 3px rgba(52, 120, 200, 0.14);
+}
+
+/* Login button */
+.login-form button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 8px;
+    background: #3478C8;
+    color: #FFFFFF;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.25s;
+}
+
+.login-form button:hover {
+    background: #2455A4;
+    transform: translateY(-2px);
+}
+
+/* ===== Mobile layout ===== */
+@media (max-width: 600px) {
+    .Header {
+        margin: 8px;
+        padding: 12px;
+    }
+
+    .Header h1 {
+        font-size: 36px;
+    }
+
+    .Header a {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .Content {
+        width: 92%;
+        margin: 28px auto;
+        padding: 28px 22px;
+    }
+
+    .Content h1 {
+        font-size: 34px;
+    }
+}
